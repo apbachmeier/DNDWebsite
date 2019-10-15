@@ -1,0 +1,95 @@
+<!-- Dungeons and Dragons website home page-->
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Home</title>
+	<meta name="keywords" content="Dungeons and Dragons,Human,Elf,Dwarf,Gnome,Halfling,Half-Elf,Half-Orc,Tiefling,Barbarian,Bard,Cleric,Druid,Fighter,Monk,Paladin,Ranger,Rogue,Sorcerer,Warlock,Wizard.">
+	<meta name="author" content="David Bachmeier">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--Enable Boostrap stuff-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<!-- load icon library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- custom css-->
+	<link rel="stylesheet" type="text/css" href="./homeStyle.css">
+</head>
+
+<body>
+	<div class="homeContainer">
+		<div class="header">
+			<h1>Welcome to David's Dungeon's and Dragons Developer</h1>
+		</div>
+		<div id="topnav">
+			<nav>
+				<a href="DNDDesigner.html" id="active">Home</a>
+				<a href="./Handbook.html">Handbook</a>
+				<a href="./RandomCharacter.html">Random Character</a>
+				<a href="./CharacterBuilder.html">Character Builder</a>
+			</nav>
+		</div>
+		<div class="contentHome">
+			<div style="display:none;" id="colorDisplays">
+				<p id="color1">#03256C</p>
+				<p id="color2">#2541B2</p>
+				<p id="color3">#1768AC</p>
+				<p id="color4">#06BEE1</p>
+				<p id="color5">#FFFFFF</p>
+			</div>
+			<div id="intro">
+				<p>
+					This website has been designed as a resource for all levels of Dungeons and Dragons players. Whether you are new to the game, or if you have been playing for years, we hope that you are able to learn something in order to make your next session more enjoyable.
+				</p>
+			</div>
+			<div id="handbookOverview">
+				<p>
+					Have you ever looked at the 316 pages in the players handbook and thought to yourself "fuck that"? We have created a concise guide to help you navigate some of the most important information in the players handbook.
+					<center>
+						<a href="./Handbook.html" class="buttonLink">Handbook</a>
+					</center>
+				</p>
+			</div>
+			<div id="randomOverview">
+				<p>
+					If you are an unimaginative, degenerate who has no inspiration to draw on for your next dungeons and dragons character then look no farther! We can help you generate a completely random character for any situation! If your trying to troll some friends for a quick one-shot or if your looking to roll a new character since you jumped off a cliff and wildshaped into a goldfish, we can help you out. Check out our random Character generator so gain some inspiration for your next role-playing adventure.
+					<center>
+						<a href="./RandomCharacter.html" class="buttonLink">Random Character</a>
+					</center>
+				</p>
+			</div>
+			<div id="builderOverview">
+				<p>
+					If you already have an idea for your next D&D Character or if you want simplify the process of leveling up your current character check out the Character Builder page. Our Character builder page makes it easy to understand the abilities of each class and race as you level up or even if you want to dabble in multiclassing.
+					<center>
+						<a href="./CharacterBuilder.html" class="buttonLink">Character Builder</a>
+					</center>
+				</p>
+			</div>
+		</div><!-- End of ContentHome div-->
+	</div><!-- End of Container div-->
+	<footer>
+		<h4>Contact Us<a id="quiet" href="Images/eggs.jpg">:</a></h4>
+		David Bachmeier
+		<br>
+		Phone: (320) 874 0711
+		<br>
+		email: davidbachmeier1@gmail.com
+	</footer>
+</body>
+<script>
+	window.onscroll = function() {myFunction()};
+
+	var topnav = document.getElementById("topnav");
+	var sticky = topnav.offsetTop;
+
+	function myFunction() {
+		if (window.pageYOffset >= sticky) {
+			topnav.classList.add("sticky")
+		} else {
+			topnav.classList.remove("sticky");
+		}
+	}
+</script>
+</html>

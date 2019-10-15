@@ -1,0 +1,217 @@
+<!-- Character Sheet-->
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Character Sheet</title>
+	<meta name="description" content="Dungeons and Dragons Guide">
+	<meta name="keywords" content="Dungeons and Dragons,Human,Elf,Dwarf,Gnome,Halfling,Half-Elf,Half-Orc,Tiefling,Barbarian,Bard,Cleric,Druid,Fighter,Monk,Paladin,Ranger,Rogue,Sorcerer,Warlock,Wizard.">
+	<meta name="author" content="David Bachmeier">
+	<meta name="viewport" content="width=device-width, inital-scale=1.0">
+	<!--Enable Boostrap stuff-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+	<a href="#" onClick="autoFill(); return true;" >Click to Generate</a>
+	<form>
+		<div id="header">
+			<p>
+				<label>Character Name: </label>
+				<input type="text" id="characterName" name="character">
+			</p>
+			<p>
+				<label>Player: </label>
+				<input type="text" id="playerName"name="Player">
+			</p>
+			<p>
+				<label>Alignment</label>
+				<input type="text" id="Alignment" name="Alignment">
+			</p>
+			<p>
+				<label>Experience Points</label>
+				<input type="number" id="experience" name="exp" min="0" max="200000">
+			</p>
+			<p>
+				<label>Class & level</label>
+				<input type="text" id="CharacterClass" name="CharacterClass">
+			</p>
+			<p>
+				<label>Race</label>
+				<input type="text" id="Race" name="race">
+			</p>
+			<p>
+				<label>Background</label>
+				<input type="text" id="Background" name="Background">
+			</p>
+		</div>
+		<div id="combatStats">
+			<p>
+				<label>Armor Class</label>
+				<input type="number" id="AC" name="armorClass" min="6" max="30">
+			</p>
+			<p>
+				<label>Initiative</label>
+				<input type="text" id="initiative" name="Initiative">
+			</p>
+			<p>
+				<label>Speed</label>
+				<input type="number" id="speed" name="speed" min="0" max="60" step="5">
+			</p>
+			<p>
+				<label>Current Hit Points</label>
+				<input type="number" id="hp" name="HP" min="0" max="500">
+			</p>
+			<p>
+				<label>Temporary Hit Points</label>
+				<input type="number" id="thp" name="tempHP" min="0" max="100">
+			</p>
+			<p>
+				<label>Hit Dice</label>
+				<input type="text" id="hitDice" name="hitDice" >
+			</p>
+			<p>
+				<label>Death Saves</label>
+				<br>
+				<p>Successes</p>
+				<input type="checkbox" name="deathSaves" value="Save1">
+				<input type="checkbox" name="deathSaves" value="Save2">
+				<input type="checkbox" name="deathSaves" value="Save3">
+			</p>
+			<p>
+				<p>Failures</p>
+				<input type="checkbox" name="deathSaves" value="Fail1">
+				<input type="checkbox" name="deathSaves" value="Fail2">
+				<input type="checkbox" name="deathSaves" value="Fail3">
+			</p>
+		</div>
+		<!--OPTIONS: Since a text box is really what i want and personality traits are never going to be something that I will be able to generate in a meaningful way I think this will end up not being part of the form but it should get a specific part of the page that will be generated.-->
+		<div id="Personality">
+			<p>
+				Personality Traits:
+				<br>
+				<textarea rows="4" cols="50" name="Personality Traits"></textarea>
+				<br>
+				Ideals:
+				<br>
+				<textarea rows="4" cols="50" name="Personality Traits"></textarea>
+				<br>
+				Bonds:
+				<br>
+				<textarea rows="4" cols="50" name="Personality Traits"></textarea>
+				<br>
+				Flaws:
+				<br>
+				<textarea rows="4" cols="50" name="Personality Traits"></textarea>
+			</p>
+		</div>
+		<div id="abilityScores">
+			<p>Ability Scores:</p>
+			<p>
+				<label>Strength</label>
+				<input type="number" id="Str" name="strength" min="3" max="30">
+			</p>
+			<p>
+				<label>Dexterity</label>
+				<input type="number" id="Dex" name="Dexterity" min="3" max="30">
+			</p>
+			<p>
+				<label>Consitution</label>
+				<input type="number" id="Con" name="Constitution" min="3" max="30">
+			</p>
+			<p>
+				<label>Intelligence</label>
+				<input type="number" id="Int" name="Intelligence" min="3" max="30">
+			</p>
+			<p>
+				<label>Wisdom</label>
+				<input type="number" id="Wis" name="Wisdom" min="3" max="30">
+			</p>
+			<p>
+				<label>Charisma</label>
+				<input type="number" id="Chr" name="Charisma" min="0" max="30">
+			</p>
+		</div>
+		<div id="SavingThrows">
+			<p>
+				<label>Saving Throws:</label>
+				<br>
+				<input type="checkbox" name="StrengthSavingThrow">Strength
+				<input type="checkbox" name="DexteritySavingThrow">Dexterity
+				<input type="checkbox" name="ConsitutionSavingThrow">Consitution
+				<input type="checkbox" name="IntelligenceSavingThrow">Intelligence
+				<input type="checkbox" name="WisdomSavingThrow">Wisdom
+				<input type="checkbox" name="CharismaSavingThrow">Charisma
+			</p>
+		</div>
+		<div id="inspiration">
+			<p>
+				<label>Inspiration</label>
+				<input type="number" name="inspiration">
+			</p>
+		</div>
+		<div id="ProficiencyBonus">
+			<p>
+				<label>Proficiency Bonus</label>
+				<input type="number" name="Proficiency">
+			</p>
+		</div>
+		<div id="passivePerception">
+			<p>
+				<label>Passive Perception</label>
+				<input type="number" name="Perception">
+			</p>
+		</div>
+		<div id="skills">
+			<p>
+				<label>Acrobatics</label><br>
+				<label>Animal handling</label><br>
+				<label>Arcana</label><br>
+				<label>Athletics</label><br>
+				<label>Deception</label><br>
+				<label>History</label><br>
+				<label>Insight</label><br>
+				<label>Intimidation</label><br>
+				<label>Investigation</label><br>
+				<label>Medicine</label><br>
+				<label>Nature</label><br>
+				<label>Perception</label><br>
+				<label>Performance</label><br>
+				<label>Persuasion</label><br>
+				<label>Religion</label><br>
+				<label>Sleight of hand</label><br>
+				<label>Stealth</label><br>
+				<label>Survival</label><br>
+			</p>
+		</div>
+		<div id="attacks">
+			<label>Name</label>
+			<input type="text" name="weapon">
+			<label>Attack Bonus</label>
+			<input type="number" name="attackModifier" >
+			<label>Damage type</label>
+			<input type="text" name="damageType">
+		</div>
+		<div>
+			<label>Proficiencies & Languages:</label><br>
+			<textarea rows="4" cols="50" name=></textarea>
+		</div>
+		<div>
+			<label>Equipment</label>
+			<br>
+			copper: <input type="number" name="copper" min="0">
+			silver: <input type="number" name="silver" min="0">
+			gold: <input type="number" name="gold" min="0">
+			platinum: <input type="number" name="platinum" min="0">
+			<br>
+			<textarea rows="4" cols="50" name="equipment"></textarea>
+		</div>
+		<div>
+			<label>Features and Traits</label>
+			<br>
+			<textarea rows="10" cols="100" name="Feature"></textarea>
+		</div>
+	</form>
+</body>
+</html>

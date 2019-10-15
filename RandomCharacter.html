@@ -1,0 +1,198 @@
+<!-- Random Character Generator -->
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Random Character Generator</title>
+	<meta name="description" content="Dungeons and Dragons Guide">
+	<meta name="keywords" content="Dungeons and Dragons,Human,Elf,Dwarf,Gnome,Halfling,Half-Elf,Half-Orc,Tiefling,Barbarian,Bard,Cleric,Druid,Fighter,Monk,Paladin,Ranger,Rogue,Sorcerer,Warlock,Wizard.">
+	<meta name="author" content="David Bachmeier">
+	<meta name="viewport" content="width=device-width, inital-scale=1.0">
+	<!--Enable Boostrap stuff-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<!-- load icon library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- custom css-->
+	<link rel="stylesheet" type="text/css" href="./randomStyle.css">
+</head>
+<script type="text/javascript">
+	function random() {
+		//header information;
+		var className="";
+		var backgroundName="";
+		var raceName="";
+		var alignment = "";
+		var subrace = 0;
+
+		//Ability scores and modifiers
+		var strength = 0;
+		var strengthMod = 0;
+		var dexterity = 0;
+		var dexterityMod = 0;
+		var constitution = 0;
+		var constitutionMod=0;
+		var intelligence = 0;
+		var intelligenceMod = 0;
+		var wisdom = 0;
+		var wisdomMod = 0;
+		var charisma = 0;
+		var charismaMod = 0;
+
+		//column two;
+		var inpsiration = 0;
+		var proficiencybonus = 0;
+
+		//Saving Throws
+		var strengthST;
+		var dexterityST;
+		var constitutionST;
+		var intelligenceST;
+		var wisdomST;
+		var charismaST;
+
+		//skills
+		var acrobatics;
+		var animalHandling;
+		var arcana;
+		var athletics;
+		var deception;
+		var history;
+		var insight;
+		var intimidation;
+		var investigation;
+		var medicine;
+		var nature;
+		var perception;
+		var performance;
+		var persuation;
+		var religion;
+		var sleightOfHand;
+		var stealth;
+		var survival;
+
+		var passivePerception = "10";
+
+		//combat stats
+		var armorClass;
+		var initiative;
+		var speed;
+		var maxHP;
+		var currentHP;
+		var tempHP;
+		var hitDice;
+		var totalHitDice;
+
+		//Money
+		var copper = 0;
+		var silver = 0;
+		var gold = 0;
+		var platinum = 0;
+
+		var raceNumber=Math.floor(Math.random()*9);
+		var classNumber=Math.floor(Math.random()*12);
+		var backgroundNumber=Math.floor(Math.random()*13);
+		if(raceNumber==0){
+				//Choose Dwarven subrace
+				subrace=Math.floor(Math.random()*2);
+				if(subrace==0){ 
+					raceName="Hill Dwarf";
+				}
+				else{
+					raceName= "Mountain Dwarf";
+				}
+			}
+			if(raceNumber==1) {
+				//Choose Elven Subrace
+				subrace=Math.floor(Math.random()*3);
+				if(subrace==0) {
+					raceName= "High Elf";
+				}
+				if(subrace==1) {
+					raceName= "Wood Elf";
+				}
+				else{ raceName="Dark Elf(Drow)";
+			}
+		}
+		if(raceNumber==2) {
+				//Choose Halfling Subrace
+				subrace=Math.floor(Math.random()*2);
+				if(subrace ==0) {
+					raceName="Lightfoot Halfling";
+				}
+				else{ raceName="Stout Halfling";}
+			}
+			if(raceNumber==3) {
+				//Choose Human Subrace
+				subrace=Math.floor(Math.random()*2);
+				if(subrace ==0) {
+					raceName="Vanilla Human";
+				}
+				else{ raceName="Variant Human";}
+			}
+			if(raceNumber==4) raceName= "Dragonborn";
+			if(raceNumber==5){ 
+				//Choose Gnome Subrace
+				subrace=Math.floor(Math.random()*2);
+				if(subrace ==0) {
+					raceName="Rock Gnome";
+				}
+				else{ raceName="Forest Gnome";}
+			}
+			if(raceNumber==6) raceName= "Half-Elf";
+			if(raceNumber==7) raceName= "Half-Orc";
+			if(raceNumber==8) raceName= "Tiefling";
+				//printRace
+				document.getElementById("printRace").innerHTML= raceNumber + " " + subrace + " " + raceName;
+				if(classNumber==0) className="Barbarian";
+				if(classNumber==1) className="Bard";
+				if(classNumber==2) className="Cleric";
+				if(classNumber==3) className="Druic";
+				if(classNumber==4) className="Fighter";
+				if(classNumber==5) className="Monk";
+				if(classNumber==6) className="Paladin";
+				if(classNumber==7) className="Ranger";
+				if(classNumber==8) className="Rogue";
+				if(classNumber==9) className="Sorcerer";
+				if(classNumber==10) className="Warlock";
+				if(classNumber==11) className="Wizard";
+				//printClass
+				document.getElementById("printClass").innerHTML=classNumber + " " + className;
+				if(backgroundNumber==0) backgroundName= "Acolyte";
+				if(backgroundNumber==1) backgroundName= "Charlatan";
+				if(backgroundNumber==2) backgroundName= "Criminal";
+				if(backgroundNumber==3) backgroundName= "Entertainer";
+				if(backgroundNumber==4) backgroundName= "Folk Hero";
+				if(backgroundNumber==5) backgroundName= "Guild Artisan";
+				if(backgroundNumber==6) backgroundName= "Hermit";
+				if(backgroundNumber==7) backgroundName= "Noble";
+				if(backgroundNumber==8) backgroundName= "Outlander";
+				if(backgroundNumber==9) backgroundName= "Sage";
+				if(backgroundNumber==10) backgroundName= "Sailor";
+				if(backgroundNumber==11) backgroundName= "Soldier";
+				if(backgroundNumber==12) backgroundName= "Urchin";
+				document.getElementById("printBackground").innerHTML=backgroundNumber + " " + backgroundName;
+			}
+		</script>
+		<body>
+			<div class="randomContainer">
+				<div class="topnav">
+					<nav>
+						<a href="DNDDesigner.html">Home</a>
+						<a href="./Handbook.html">Handbook</a>
+						<a href="./RandomCharacter.html" id="active">Random Character</a>
+						<a href="./CharacterBuilder.html">Character Builder</a>
+					</nav>
+				</div><!-- end topnav class-->
+				<h1>Random Character Generator</h1>
+				<p>Generate a completely random charcter with the press of a button.</p>
+
+				<button type="button" onclick=random()>Generate</button> 
+				<p id="printRace"></p>
+				<p id="printClass"></p>
+				<p id="printBackground"></p>
+
+			</div><!-- End container class-->
+		</body>
+		</html>

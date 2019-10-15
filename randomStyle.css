@@ -1,0 +1,22 @@
+/*Style Random Character */
+
+/* style the top nav*/
+.topnav {
+	overflow: hidden;
+	background-color: #1768AC;
+}
+.topnav a {
+	float: left;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 20px;
+}
+.topnav a:hover {
+	background-color: #06BEE1; 
+	color: black;
+}
+.topnav a#active {
+	background-color: #2541B2;
+}
